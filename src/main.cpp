@@ -9,35 +9,46 @@ auto currentState = GameState::IDLE;
 auto rodsLeft = RODS_MAX;
 
 int allRods[] = {
-  OUTPUT_ROD_01,
-  OUTPUT_ROD_02,
-  OUTPUT_ROD_03,
-  OUTPUT_ROD_04,
-  OUTPUT_ROD_05,
-  OUTPUT_ROD_06,
-  OUTPUT_ROD_07,
-  OUTPUT_ROD_08,
-  OUTPUT_ROD_09,
-  OUTPUT_ROD_10,
+  OUTPUT_MAGNET_01,
+  OUTPUT_MAGNET_02,
+  OUTPUT_MAGNET_03,
+  OUTPUT_MAGNET_04,
+  OUTPUT_MAGNET_05,
+  OUTPUT_MAGNET_06,
+  OUTPUT_MAGNET_07,
+  OUTPUT_MAGNET_08,
+  OUTPUT_MAGNET_09,
+  OUTPUT_MAGNET_10,
 };
 
 void setup() {
-  randomSeed(analogRead(0));
+  randomSeed(analogRead(A0));
 
   // Pin Setup
   pinMode(INPUT_BUTTON_01, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(INPUT_BUTTON_01), buttonPressed, LOW);
 
-  pinMode(OUTPUT_ROD_01, OUTPUT);
-  pinMode(OUTPUT_ROD_02, OUTPUT);
-  pinMode(OUTPUT_ROD_03, OUTPUT);
-  pinMode(OUTPUT_ROD_04, OUTPUT);
-  pinMode(OUTPUT_ROD_05, OUTPUT);
-  pinMode(OUTPUT_ROD_06, OUTPUT);
-  pinMode(OUTPUT_ROD_07, OUTPUT);
-  pinMode(OUTPUT_ROD_08, OUTPUT);
-  pinMode(OUTPUT_ROD_09, OUTPUT);
-  pinMode(OUTPUT_ROD_10, OUTPUT);
+  pinMode(INPUT_SENSOR_01, INPUT);
+  pinMode(INPUT_SENSOR_02, INPUT);
+  pinMode(INPUT_SENSOR_03, INPUT);
+  pinMode(INPUT_SENSOR_04, INPUT);
+  pinMode(INPUT_SENSOR_05, INPUT);
+  pinMode(INPUT_SENSOR_06, INPUT);
+  pinMode(INPUT_SENSOR_07, INPUT);
+  pinMode(INPUT_SENSOR_08, INPUT);
+  pinMode(INPUT_SENSOR_09, INPUT);
+  pinMode(INPUT_SENSOR_10, INPUT);
+
+  pinMode(OUTPUT_MAGNET_01, OUTPUT);
+  pinMode(OUTPUT_MAGNET_02, OUTPUT);
+  pinMode(OUTPUT_MAGNET_03, OUTPUT);
+  pinMode(OUTPUT_MAGNET_04, OUTPUT);
+  pinMode(OUTPUT_MAGNET_05, OUTPUT);
+  pinMode(OUTPUT_MAGNET_06, OUTPUT);
+  pinMode(OUTPUT_MAGNET_07, OUTPUT);
+  pinMode(OUTPUT_MAGNET_08, OUTPUT);
+  pinMode(OUTPUT_MAGNET_09, OUTPUT);
+  pinMode(OUTPUT_MAGNET_10, OUTPUT);
 
   // LED Setup
   // TODO
